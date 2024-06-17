@@ -11,7 +11,7 @@ jobs:
     - name: checkout repor
       uses: actions/checkout@v4
     - name: Install Cowway
-      run: apt-get install cowsay -y
+      run: sudo apt-get install cowsay -y
     - name: Install Cowsay COmmand
       run: cowsay -f dragon  "Run for a cover i am Dragon" >> drg.txt
     - name: Sleep for 30 second
