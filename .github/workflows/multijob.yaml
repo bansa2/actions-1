@@ -1,0 +1,32 @@
+name: Multi Job demo
+
+on: push
+
+jobs:
+ build_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: List all file
+      run: ls -ltra
+    - name: Install Cowway
+      run: apt-get install cowsay -y
+    - name: Install Cowsay COmmand
+      run: cowsay -f dragon  "Run for a cover i am Dragon" >> drg.txt
+    - name: Sleep for 30 second
+      run: sleep 30
+ test_job_2:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Sleep for 10 second
+      run: sleep 10
+    - name: Test file exists
+      run: grep -i "dragon" drg.txt
+ deploy_job_3:
+    runs-on: ubuntu-latest
+    steps:
+    - name: contant of dragon file
+      run: cat drg.txt
+    - name: List all file
+      run: ls -ltra
+       
+    
