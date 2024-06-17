@@ -13,5 +13,7 @@ jobs:
                 echo "my first workflow"
                 ls
                 cat README.md
+            - name: Generate Asci data
+              run: cowsay -f dragon  "Run for a cover i am Dragon" >> drg.txt
 
 
