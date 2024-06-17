@@ -13,4 +13,6 @@ jobs:
               run: ls
 
             - name: Executing script
-              run: ./as.sh
+              run: |
+               chmod +x as.sh
+               ./as.sh
