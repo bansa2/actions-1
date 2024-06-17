@@ -8,8 +8,6 @@ jobs:
     steps:
     - name: List all file
       run: ls -ltra
-    - name: checkout repor
-      uses: actions/checkout@v4
     - name: Install Cowway
       run: sudo apt-get install cowsay -y
     - name: Install Cowsay COmmand
@@ -17,6 +15,7 @@ jobs:
     - name: Sleep for 30 second
       run: sleep 30
  test_job_2:
+    needs: build_job
     runs-on: ubuntu-latest
     steps:
     - name: Sleep for 10 second
@@ -24,6 +23,7 @@ jobs:
     - name: Test file exists
       run: grep -i "dragon" drg.txt
  deploy_job_3:
+    needs: test_job_2
     runs-on: ubuntu-latest
     steps:
     - name: contant of dragon file
