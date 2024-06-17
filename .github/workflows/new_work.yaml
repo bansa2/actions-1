@@ -14,5 +14,5 @@ jobs:
 
             - name: Executing script
               run: |
-               chmod +x as.sh
-               ./as.sh
+               chmod +x ast.sh
+               ./ast.sh
