@@ -9,10 +9,9 @@ jobs:
             - name: checkout repor
               uses: actions/checkout@v4
             - name: welcome message
-              run: echo "my first workflow"
-            - name: List file
-              run: ls
-            - name: Read File
-              run: cat README.md
+              run: |
+                echo "my first workflow"
+                ls
+                cat README.md
 
 
