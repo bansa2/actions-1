@@ -1,0 +1,25 @@
+name: Generate Aschi Work flow
+
+on: push
+
+jobs:
+    first_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout repor
+              uses: actions/checkout@v4
+
+            - name: Install Cowsay Program
+              run: sudo apt-get install cowsay -y
+
+            - name: Execute Cowsay Command
+              run: cowsay -f dragon  "Run for a cover i am Dragon" >> drg.txt
+            
+            - name: Text file exists
+              run: grep -i "dragon" drg.txt
+            
+            - name: Read File
+              run: cat drg.txt
+
+            - name: check repo file
+              run: ls
